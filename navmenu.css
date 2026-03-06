@@ -1,16 +1,17 @@
 .wrapper {
     display: flex;
 }
-
+body{
+    background: white;
+    color:#2f3e46;
+}
 /*позиционирование sidebar*/
 .header {
     position: relative;
-    top: 0;
-    left: 0;
     height: 100vh;
     width: 130px;
-    background: blue;
-    transition: all 0.5s ease;
+    background:#f9fcf7;
+    transition: width 0.5s ease;
 }
 
 /*при скрытии 40рх*/
@@ -45,23 +46,26 @@
     width: 100%;
     height: 3px;
     border-radius: 2px;
-    background-color: rgb(255, 255, 255);
+    background-color:#2f3e46;
 
 }
 
 /*ссылки sidebar*/
 .nav_link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     width: 100%;
-    color: white;
-    padding: 15px 0px 15px 5px;
+    color: #2f3e46;
+    padding: 15px 0 15px 5px;
     font-size: 14px;
 }
 
 /*ссылки sidebar при наведении*/
 .nav_link:hover {
-    color: rgb(255, 0, 0);
-    background-color: white;
+    color:white;
+    background:#3a86ff;
 }
 
 /*скрытие текста navmenu*/
@@ -74,6 +78,8 @@
     opacity: 0;
     width: 0;
     overflow: hidden;
+    display: inline-block;
+    pointer-events: none; /*Чтобы текст нельзя было случайно выделить*/
 }
 
 /*контентная часть*/
