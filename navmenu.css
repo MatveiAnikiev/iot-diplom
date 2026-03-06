@@ -1,0 +1,83 @@
+.wrapper {
+    display: flex;
+}
+
+/*позиционирование sidebar*/
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 130px;
+    background: blue;
+    transition: all 0.5s ease;
+}
+
+/*при скрытии 40рх*/
+.header.collapsed {
+    width: 40px;
+}
+
+/*burger*/
+.header_body {
+    display: flex;
+    flex-direction: column;
+    /* чтобы бургер и меню шли сверху вниз */
+    gap: 30px;
+    /* расстояние между бургером и меню */
+}
+
+/*расположения burger*/
+.burger {
+    width: 25px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/*внешний вид burger*/
+.burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+/*ссылки sidebar*/
+.nav_link {
+    text-decoration: none;
+    width: 100%;
+    color: white;
+    padding: 15px 0px 15px 5px;
+    font-size: 14px;
+}
+
+/*ссылки sidebar при наведении*/
+.nav_link:hover {
+    color: rgb(255, 0, 0);
+    background-color: white;
+}
+
+/*скрытие текста navmenu*/
+.nav_text {
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.header.collapsed .nav_text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+/*контентная часть*/
+.content {
+    flex: 1;
+    padding: 20px;
+}

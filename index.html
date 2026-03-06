@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--при уменьшении страницы не происходит масштабирования-->
+
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="navmenu.css">
+    <link rel="stylesheet" href="normilize.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside class="header">
+            <div class="header_body">
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="header_menu">
+                    <ul class="navmenu">
+                        <li><a href="" class="nav_link">
+                                <span class="nav_icon">🏠</span>
+                                <span class="nav_text">Главная</span>
+                            </a></li>
+                        <li><a href="" class="nav_link">
+                                <span class="nav_icon">📊</span>
+                                <span class="nav_text">Аналитика</span>
+                            </a></li>
+                        <li><a href="" class="nav_link">
+                                <span class="nav_icon">📄</span>
+                                <span class="nav_text">Отчеты</span>
+                            </a></li>
+                        <li><a href="" class="nav_link">
+                                <span class="nav_icon">🏠</span>
+                                <span class="nav_text">Информация</span>
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="content">
+            <div class="content_text">
+                <h1 class="Titel_1">Данные IOT макетов</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nam iusto modi eveniet nobis tempore
+                    tempora harum consequuntur? Doloremque, perspiciatis? Debitis esse laborum beatae consequatur illum
+                    quis inventore deleniti, rem quae dolores asperiores, nulla, recusandae tempora cum? Accusamus illum
+                    est placeat eaque aperiam expedita velit saepe, perferendis tempore suscipit a molestias adipisci,
+                    porro voluptate amet odit explicabo qui, distinctio sed iusto sit iure repudiandae! Ipsam, nobis sit
+                    a, fugit exercitationem nulla consequatur possimus aliquid hic, perspiciatis laborum soluta delectus
+                    autem laboriosam illum. Repellendus eum eaque necessitatibus nulla delectus excepturi quae.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', function () {
+            document.querySelector('.header').classList.toggle('collapsed');
+        });
+    </script>
+
+</body>
+
+</html>
