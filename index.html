@@ -24,19 +24,27 @@
                 <nav class="header_menu">
                     <ul class="navmenu">
                         <li><a href="#" class="nav_link">
-                                <span class="nav_icon">🏠</span>
+                                <span class="nav_icon">
+                                <i data-lucide="layout-dashboard"></i>
+                                </span>  
                                 <span class="nav_text">Главная</span>
                             </a></li>
                         <li><a href="#" class="nav_link">
-                                <span class="nav_icon">📊</span>
+                                <span class="nav_icon">
+                                    <i data-lucide="chart-column-big"></i>
+                                </span>
                                 <span class="nav_text">Аналитика</span>
                             </a></li>
                         <li><a href="#" class="nav_link">
-                                <span class="nav_icon">📄</span>
+                                <span class="nav_icon">
+                                    <i data-lucide="book-open"></i>
+                                </span>
                                 <span class="nav_text">Отчеты</span>
                             </a></li>
                         <li><a href="#" class="nav_link">
-                                <span class="nav_icon">🏠</span>
+                                <span class="nav_icon">
+                                    <i data-lucide="info"></i>
+                                </span>
                                 <span class="nav_text">Информация</span>
                             </a></li>
                     </ul>
@@ -59,9 +67,17 @@
 
     </div>
 
-    <script src="JS/burger.js">
+    <script>
+        document.querySelector('.burger').addEventListener('click', function () {
+            document.querySelector('.header').classList.toggle('expanded');
+        });
     </script>
 
+    <!-- Lucide icons inclussion -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    lucide.createIcons();
+    </script>
 </body>
 
 </html>

@@ -46,19 +46,6 @@ body{
     height: 3px;
     border-radius: 2px;
     background-color:#2f3e46;
-    transition: all 0.5s ease;
-}
-/* активное состояние (крестик) */
-.burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /*ссылки sidebar*/
@@ -71,15 +58,27 @@ body{
     color: #2f3e46;
     padding: 15px 0 15px 5px;
     font-size: 14px;
-    will-change: transform, box-shadow;
     transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease;
 }
+/* контейнер иконки */
+.nav_icon{
+    width:24px;
+    min-width:24px;
+    display:flex;
+    justify-content:center; /* выравнивание по горизонтаои*/
+    align-items:center; /* выравнивание по вертикали*/
+}
 
+/* иконка */
+.nav_icon svg{
+    width:20px;
+    height:20px;
+}
 /*ссылки sidebar при наведении*/
-.nav_link:hover {
-    color: #ffffff; /* цвет текста при hover */
-    background: #929292; /* можно оставить серый или подобрать свой */
-    box-shadow: 0 0.5em 0.75em 0em rgba(96, 96, 96, 0.8); /* мягкая тень */
+.nav_link:hover{
+    color: #ffffff; 
+    background: #929292;
+    box-shadow: 0 0.5em 0.75em 0em rgba(96, 96, 96, 0.8); /* тень */
     transform: translateY(-0.25em); /* эффект поднятия */
 }
 
