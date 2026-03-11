@@ -1,4 +1,5 @@
 .wrapper {
+    display: flex;
     position: relative;
 }
 body{
@@ -16,6 +17,9 @@ body{
     transition: width 0.5s ease, background 0.5s ease;
     overflow:hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    /*плавность анимации для GOOGLE*/
+    will-change: width; 
+    transform: translateZ(0);
 }
 
 /*burger*/
