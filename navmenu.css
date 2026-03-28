@@ -21,7 +21,6 @@ body{
     will-change: width; 
     transform: translateZ(0);
 }
-
 /*burger*/
 .header_body {
     display: flex;
@@ -37,20 +36,22 @@ body{
     height: 20px;
     margin-top: 10px;
     margin-left: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
     cursor: pointer;
 }
 
 /*внешний вид burger*/
 .burger span {
-    display: block;
+    position: absolute;
     width: 100%;
     height: 3px;
     border-radius: 2px;
     background-color:#2f3e46;
+    transition: top 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
 }
+.burger span:nth-child(1) { top: 0; }
+.burger span:nth-child(2) { top: 8px; }
+.burger span:nth-child(3) { top: 16px; }
 
 /*ссылки sidebar*/
 .nav_link {
@@ -63,6 +64,32 @@ body{
     padding: 15px 0 15px 5px;
     font-size: 14px;
     transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease;
+}
+/* активный пункт */
+.nav_link.active{
+    position: relative; 
+}
+
+/* полоска слева */
+.nav_link.active::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:4px;
+    background:#2f3e46;
+    border-radius:0 3px 3px 0;
+
+    transform: scaleY(0.6); /* 60% от высоты */
+    transform-origin: center; /* от центра */
+
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+.header:hover .nav_link.active:hover::before,
+.header.expanded .nav_link.active:hover::before{
+    transform: scaleY(1); /* 100% */
+    background: #ffffff;
 }
 /* контейнер иконки */
 .nav_icon{
@@ -98,6 +125,10 @@ body{
     overflow: hidden;
     display: inline-block;
     pointer-events: none; /*Чтобы текст нельзя было случайно выделить*/
+}
+.header.expanded .nav_text {
+    opacity: 1;
+    transition-delay: 0.2s; /* чуть позже бургер анимации */
 }
 
 /*контентная часть*/
