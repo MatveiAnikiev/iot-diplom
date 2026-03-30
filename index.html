@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--при уменьшении страницы не происходит масштабирования-->
 
     <title>Главная страница</title>
     <link rel="stylesheet" href="normilize.css">
@@ -25,8 +24,8 @@
                     <ul class="navmenu">
                         <li><a href="#" class="nav_link active">
                                 <span class="nav_icon">
-                                <i data-lucide="layout-dashboard"></i>
-                                </span>  
+                                    <i data-lucide="layout-dashboard"></i>
+                                </span>
                                 <span class="nav_text">Главная</span>
                             </a></li>
                         <li><a href="#" class="nav_link">
@@ -63,17 +62,17 @@
                     a, fugit exercitationem nulla consequatur possimus aliquid hic, perspiciatis laborum soluta delectus
                     autem laboriosam illum. Repellendus eum eaque necessitatibus nulla delectus excepturi quae.</p>
             </div>
+            <div class="kpi_card_temperature">
+                <span class="card_value" id="temperature_value"></span>
+                <span class="card_text"> Температура</span>
+            </div>
         </div>
 
     </div>
-
     <script src="JS/scripts.js"></script>
-
     <!-- Lucide icons inclussion -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-    lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>
