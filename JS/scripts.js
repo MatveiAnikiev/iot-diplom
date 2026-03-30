@@ -1,5 +1,5 @@
 const burger = document.querySelector('.burger');
-const header = document.querySelector('.header');
+const sidebar = document.querySelector('.sidebar');
 const spans = burger.querySelectorAll('span');
 const navLinks = document.querySelectorAll('.nav_link');
 
@@ -15,8 +15,8 @@ function openMenu(){
     //  схлопывание
     spans[0].style.top = middleTop + 'px';
     spans[2].style.top = middleTop + 'px';
-    header.classList.add('expanded');
-    header.classList.remove('collapsed');
+    sidebar.classList.add('expanded');
+    sidebar.classList.remove('collapsed');
         
     setTimeout(() => {
         // скрываем центральную
@@ -42,8 +42,8 @@ function closeMenu(){
     spans[1].style.opacity = '1';
 
     // закрываем меню
-    header.classList.remove('expanded');
-    header.classList.add('collapsed');
+    sidebar.classList.remove('expanded');
+    sidebar.classList.add('collapsed');
 
     setTimeout(() => {
         spans[0].style.top = '0px';

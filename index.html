@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,15 @@
 
 <body>
     <div class="wrapper">
-        <aside class="header collapsed">
-            <div class="header_body">
-                <div class="burger">
+        <aside class="sidebar collapsed">
+            <div class="sidebar_body">
+                <button class="burger" type="button">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
 
-                <nav class="header_menu">
+                <nav class="sidebar_menu">
                     <ul class="navmenu">
                         <li><a href="#" class="nav_link active">
                                 <span class="nav_icon">
@@ -51,7 +51,7 @@
             </div>
         </aside>
 
-        <div class="content">
+        <main class="content">
             <div class="content_text">
                 <h1 class="title">Данные IOT макетов</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nam iusto modi eveniet nobis tempore
@@ -62,11 +62,53 @@
                     a, fugit exercitationem nulla consequatur possimus aliquid hic, perspiciatis laborum soluta delectus
                     autem laboriosam illum. Repellendus eum eaque necessitatibus nulla delectus excepturi quae.</p>
             </div>
-            <div class="kpi_card_temperature">
-                <span class="card_value" id="temperature_value"></span>
-                <span class="card_text"> Температура</span>
-            </div>
-        </div>
+            <section class="kpi">
+                <h2 class="kpi_title">Текущие показатели</h2>
+            
+                <ul class="kpi_list">
+                    <li class="kpi_item">
+                        <dl class="kpi_metric">
+                            <dt class="kpi_label">Температура</dt>
+                            <dd class="kpi_value">
+                                <span id="temperature_value"></span>
+                                <span class="kpi_unit">°C</span>
+                            </dd>
+                        </dl>
+                    </li>
+            
+                    <li class="kpi_item">
+                        <dl class="kpi_metric">
+                            <dt class="kpi_label">Давление</dt>
+                            <dd class="kpi_value">
+                                <span id="pressure_value"></span>
+                                <span class="kpi_unit">кПа</span>
+                            </dd>
+                        </dl>
+                        
+                    </li>
+            
+                    <li class="kpi_item">
+                        <dl class="kpi_metric">
+                            <dt class="kpi_label">Освещённость</dt>
+                            <dd class="kpi_value">
+                                <span id="light_value"></span>
+                                <span class="kpi_unit">лк</span>
+                            </dd>
+                        </dl>
+                    </li>
+            
+                    <li class="kpi_item">
+                        <dl class="kpi_metric">
+                            <dt class="kpi_label">Яркость</dt>
+                            <dd class="kpi_value">
+                                <span id="brightness_value"></span>
+                                <span class="kpi_unit">%</span>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </section>
+        </main>
 
     </div>
     <script src="JS/scripts.js"></script>

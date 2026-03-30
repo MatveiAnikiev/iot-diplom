@@ -9,7 +9,7 @@ body {
 }
 
 /*позиционирование sidebar*/
-.header {
+.sidebar {
     position: fixed;
     left: 0;
     top: 0;
@@ -25,7 +25,7 @@ body {
 }
 
 /*burger*/
-.header_body {
+.sidebar_body {
     display: flex;
     flex-direction: column;
     /* чтобы бургер и меню шли сверху вниз */
@@ -40,7 +40,12 @@ body {
     margin-top: 10px;
     margin-left: 5px;
     position: relative;
-    cursor: pointer;
+    /*сброс стилей button*/
+    border: none;
+    background: transparent;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 /*внешний вид burger*/
@@ -102,8 +107,8 @@ body {
     transition: transform 0.4s cubic-bezier(.4, 0, .2, 1);
 }
 
-.header:hover .nav_link.active:hover::before,
-.header.expanded .nav_link.active:hover::before {
+.sidebar:hover .nav_link.active:hover::before,
+.sidebar.expanded .nav_link.active:hover::before {
     transform: scaleY(1);
     /* 100% */
     background: #ffffff;
@@ -142,7 +147,7 @@ body {
     white-space: nowrap;
 }
 
-.header.collapsed .nav_text {
+.sidebar.collapsed .nav_text {
     opacity: 0;
     width: 0;
     overflow: hidden;
@@ -151,7 +156,7 @@ body {
     /*Чтобы текст нельзя было случайно выделить*/
 }
 
-.header.expanded .nav_text {
+.sidebar.expanded .nav_text {
     opacity: 1;
     transition-delay: 0.2s;
     /* чуть позже бургер анимации */
@@ -166,15 +171,15 @@ body {
 
 /*устройства с мышью*/
 @media (min-width: 1025px) {
-    .header {
+    .sidebar {
         width: 40px;
     }
 
-    .header:hover {
+    .sidebar:hover {
         width: 130px;
     }
 
-    .header:hover .nav_text {
+    .sidebar:hover .nav_text {
         opacity: 1;
         /* текст становится видимым */
         width: auto;
@@ -194,12 +199,12 @@ body {
         display: flex;
     }
 
-    .header {
+    .sidebar {
         width: 40px;
         /* свернутое меню */
     }
 
-    .header .nav_text {
+    .sidebar .nav_text {
         opacity: 0;
         /* текст скрыт по умолчанию */
         width: 0;
@@ -208,12 +213,12 @@ body {
         transition: opacity 0.5s ease, width 0.5s ease;
     }
 
-    .header.expanded {
+    .sidebar.expanded {
         width: 130px;
         /* раскрытое меню */
     }
 
-    .header.expanded .nav_text {
+    .sidebar.expanded .nav_text {
         opacity: 1;
         /* текст видим */
         width: auto;
