@@ -69,3 +69,26 @@ navLinks.forEach(link => {
         closeMenu();
     });
 });
+
+/* ===== Загрузка данных из JSON ===== */
+
+async function loadKpiData() {
+    try {
+        const response = await fetch('data_Lab_macket_v1.json');
+
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        document.getElementById('temperature_value').textContent = data.temperature.toFixed(1);
+        document.getElementById('pressure_value').textContent = data.pressure;
+        document.getElementById('light_value').textContent = data.ambient_light;
+        document.getElementById('brightness_value').textContent = data.lightness;
+    } catch (error) {
+        console.error('Ошибка загрузки JSON:', error);
+    }
+}
+
+loadKpiData();

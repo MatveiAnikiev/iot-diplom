@@ -1,14 +1,9 @@
-.wrapper {
-    display: flex;
-    position: relative;
-}
-
 body {
-    background: white;
+    background: rgb(255, 255, 255);
     color: #2f3e46;
 }
 
-/*позиционирование sidebar*/
+/* ============= Позиционирование sidebar ==========*/
 .sidebar {
     position: fixed;
     left: 0;
@@ -24,13 +19,11 @@ body {
     transform: translateZ(0);
 }
 
-/*burger*/
+/* ======== Burger ========*/
 .sidebar_body {
     display: flex;
     flex-direction: column;
-    /* чтобы бургер и меню шли сверху вниз */
     gap: 30px;
-    /* расстояние между бургером и меню */
 }
 
 /*расположения burger*/
@@ -70,7 +63,7 @@ body {
     top: 16px;
 }
 
-/*ссылки sidebar*/
+/*============ Ссылки sidebar`а ============*/
 .nav_link {
     display: flex;
     align-items: center;
@@ -162,13 +155,92 @@ body {
     /* чуть позже бургер анимации */
 }
 
-/*контентная часть*/
+/* ========== Контентная часть =========*/
 .content {
-    flex: 1;
     padding: 20px;
     margin-left: 40px;
 }
 
+.content_text{
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content_text p {
+    text-align: justify;
+}
+
+/* ======== KPI ========= */
+.kpi{
+    padding: 20px 0px 20px 0;
+}
+/*Текс над KPI*/
+.kpi_title{
+    margin-bottom: 30px;
+}
+
+/* Расположение KPI карточек */
+.kpi_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/*KPI карточки*/
+.kpi_metric{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.kpi_metric:hover{
+    transform: translateY(-0.2em);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.kpi_label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(47, 62, 70, 0.8);
+    padding: 10px 0px 0px 15px;
+    font-size: 15px;
+}
+
+.kpi_value {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding-left:15px;
+}
+
+#temperature_value, #pressure_value, #light_value, #brightness_value{
+    font-size: 40px;
+    font-weight: 700;
+}
+    
+.kpi_unit {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+/* Иконки KPI */
+.kpi_icon{
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+
+/*========= Устройства ===========*/
 /*устройства с мышью*/
 @media (min-width: 1025px) {
     .sidebar {
