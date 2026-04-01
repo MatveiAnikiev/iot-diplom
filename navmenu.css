@@ -10,6 +10,7 @@ body {
     top: 0;
     height: 100vh;
     width: 40px;
+    z-index: 100;
     background: #eeeeee;
     transition: width 0.5s ease, background 0.5s ease;
     overflow: hidden;
@@ -177,10 +178,13 @@ body {
 /* ======== KPI ========= */
 .kpi{
     padding: 20px 0px 20px 0;
+    background-color:#c4cdff;
+    border-radius: 10px;
 }
 /*Текс над KPI*/
 .kpi_title{
     margin-bottom: 30px;
+    padding: 0px 20px;
 }
 
 /* Расположение KPI карточек */
@@ -189,6 +193,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
+    padding: 0px 20px;
 }
 
 /*KPI карточки*/
@@ -204,7 +209,7 @@ body {
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .kpi_metric:hover{
-    transform: translateY(-0.2em);
+    transform: translateY(-0.22em);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .kpi_label{
@@ -235,9 +240,15 @@ body {
 
 /* Иконки KPI */
 .kpi_icon{
-    display: flex;
+    display:inline-flex;
+    justify-content: center;
     align-items: center;
-    padding-right: 15px;
+    width: 36px;
+    height: 36px;
+    background-color: #ebebebc2;
+    border-radius: 12px;
+    margin-right: 12px;
+
 }
 
 /*========= Устройства ===========*/

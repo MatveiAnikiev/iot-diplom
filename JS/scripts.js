@@ -1,3 +1,5 @@
+
+// ========== BURGER ============
 const burger = document.querySelector('.burger');
 const sidebar = document.querySelector('.sidebar');
 const spans = burger.querySelectorAll('span');
