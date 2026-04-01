@@ -94,3 +94,41 @@ async function loadKpiData() {
 }
 
 loadKpiData();
+
+// ======= График RGB Chart.js =========
+
+fetch('./data_Lab_macket_v1.json')
+    .then(response => response.json()) // ответ в JSON
+    .then(data => {
+        const pie_chart_rgb = new Chart(document.querySelector('#pie_chart_RGB'), {
+            type: 'pie',
+            data: {
+                labels: ['Red', 'Green', 'Blue', ],
+                datasets: [{
+                    label: ' ',
+                    data: [data.red_light, data.green_light, data.blue_light],
+                    borderWidth: 2,
+                    backgroundColor: [
+                        'rgba(253, 113, 143, 0.6)',  
+                        'rgba(85, 192, 101, 0.6)', 
+                        'rgba(67, 165, 231, 0.6)' 
+                    ],
+                    hoverBackgroundColor: [
+                        'rgba(253, 113, 143, 0.9)',
+                        'rgba(85, 192, 101, 0.9)',
+                        'rgba(67, 165, 231, 0.9)' 
+                    ],
+                    hoverOffset: 12
+
+                }]
+            },
+            options: {
+                animation:{
+                    animateRotate:true,
+                    duration: 2000,
+                },
+        
+            }
+        });
+    });
+    

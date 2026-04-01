@@ -138,7 +138,7 @@ body {
 /*скрытие текста navmenu*/
 .nav_text {
     transition: opacity 0.3s ease;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .sidebar.collapsed .nav_text {
@@ -173,6 +173,7 @@ body {
 
 .content_text p {
     text-align: justify;
+    padding-bottom: 20px;
 }
 
 /* ======== KPI ========= */
@@ -180,6 +181,7 @@ body {
     padding: 20px 0px 20px 0;
     background-color:#c4cdff;
     border-radius: 10px;
+    
 }
 /*Текс над KPI*/
 .kpi_title{
@@ -219,6 +221,7 @@ body {
     color: rgba(47, 62, 70, 0.8);
     padding: 10px 0px 0px 15px;
     font-size: 15px;
+    font-weight: 400;
 }
 
 .kpi_value {
@@ -249,6 +252,22 @@ body {
     border-radius: 12px;
     margin-right: 12px;
 
+}
+/*========= График RGB ===========*/
+
+/* общий блок текста и графика*/
+.section_chart_RGB{
+    padding: 30px 0px;
+}
+
+.chart_title{
+    
+}
+/* график */
+.chart_RGB{
+    position: relative;
+    width: 40%;
+    padding: 20px 0px;
 }
 
 /*========= Устройства ===========*/
