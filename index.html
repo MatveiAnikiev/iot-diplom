@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Главная страница</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="normilize.css">
     <link rel="stylesheet" href="navmenu.css">
 </head>
@@ -69,7 +70,7 @@
                 <li class="kpi_item">
                     <dl class="kpi_metric">
                         <dt class="kpi_label">Температура
-                            <span class="kpi_icon">
+                            <span class="kpi_icon" id="kpi_temp">
                                 <i data-lucide="thermometer"></i>
                             </span>
                         </dt>
@@ -83,7 +84,7 @@
                 <li>
                     <dl class="kpi_metric">
                         <dt class="kpi_label">Давление
-                            <span class="kpi_icon">
+                            <span class="kpi_icon" id="kpi_pressure">
                                 <i data-lucide="gauge"></i>
                             </span>
                         </dt>
@@ -98,7 +99,7 @@
                 <li>
                     <dl class="kpi_metric">
                         <dt class="kpi_label">Освещённость
-                            <span class="kpi_icon">
+                            <span class="kpi_icon" id="kpi_light">
                                 <i data-lucide="lightbulb"></i>
                             </span>
                         </dt>
@@ -112,7 +113,7 @@
                 <li>
                     <dl class="kpi_metric">
                         <dt class="kpi_label">Яркость
-                            <span class="kpi_icon">
+                            <span class="kpi_icon" id="kpi_lightless">
                                 <i data-lucide="sun"></i>
                             </span>
                         </dt>
@@ -127,12 +128,13 @@
         <section class="section_chart_RGB">
             <h2 class="chart_title">Цветовые компоненты RGB</h2>
             <div class="chart_RGB">
-                <canvas id="pie_chart_RGB"></canvas>
+                <canvas id="bar_chart_RGB"></canvas>
             </div>
         </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="JS/scripts.js"></script>
     <!-- Lucide icons inclussion -->
     <script src="https://unpkg.com/lucide@latest"></script>

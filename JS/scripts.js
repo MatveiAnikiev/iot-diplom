@@ -96,39 +96,82 @@ async function loadKpiData() {
 loadKpiData();
 
 // ======= График RGB Chart.js =========
+Chart.register(ChartDataLabels);
 
 fetch('./data_Lab_macket_v1.json')
     .then(response => response.json()) // ответ в JSON
     .then(data => {
-        const pie_chart_rgb = new Chart(document.querySelector('#pie_chart_RGB'), {
-            type: 'pie',
+        const pie_chart_rgb = new Chart(document.querySelector('#bar_chart_RGB'), {
+            type: 'bar',
             data: {
                 labels: ['Red', 'Green', 'Blue', ],
                 datasets: [{
                     label: ' ',
                     data: [data.red_light, data.green_light, data.blue_light],
-                    borderWidth: 2,
+                    borderWidth: 3,
+                    borderRadius:10,
                     backgroundColor: [
                         'rgba(253, 113, 143, 0.6)',  
                         'rgba(85, 192, 101, 0.6)', 
                         'rgba(67, 165, 231, 0.6)' 
+                    ],
+                    borderColor: [
+                        'rgba(197, 64, 113, 0.5)',
+                        'rgba(62, 144, 74, 0.5)',
+                        'rgba(44, 111, 155, 0.5)' 
                     ],
                     hoverBackgroundColor: [
                         'rgba(253, 113, 143, 0.9)',
                         'rgba(85, 192, 101, 0.9)',
                         'rgba(67, 165, 231, 0.9)' 
                     ],
-                    hoverOffset: 12
+                    barPercentage: 1.1,
 
                 }]
             },
             options: {
-                animation:{
-                    animateRotate:true,
-                    duration: 2000,
+                
+                scales:{
+                    y: {
+                        type: 'logarithmic',
+                        display: false,
+                        offset: true,
+                    },
+                    x: {
+                        offset: true,
+                        grid: {
+                            drawTicks: false,    // убираем маленькие палочки на делениях
+                            drawOnChartArea: false, // убираем сетку на фоне графика
+                            
+                        },
+                        ticks:{
+                            font: {
+                                weight: 'bold',
+                                size: 14,
+                                color: '#2f3e46',
+                            }
+                        },
+                    }
                 },
-        
-            }
+
+                plugins: {
+                    legend:{display: false},
+                    datalabels:{
+                        labels: [{
+                            color: '#2f3e46',
+                            anchor: 'end',
+                            align: 'top',
+                            offset: -30,
+                            clip: false,
+                            font: {
+                                weight: 'bold',
+                                size: 16,
+                            },
+                        }],
+                    },
+                }
+            },
+            plugins: [ChartDataLabels],
         });
     });
     
