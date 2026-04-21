@@ -111,26 +111,25 @@ fetch('./data_Lab_macket_v1.json')
                     borderWidth: 3,
                     borderRadius:10,
                     backgroundColor: [
-                        'rgba(253, 113, 143, 0.6)',  
-                        'rgba(85, 192, 101, 0.6)', 
-                        'rgba(67, 165, 231, 0.6)' 
+                        'rgba(243, 63, 102, 0.6)',  
+                        'rgba(53, 187, 73, 0.6)', 
+                        'rgba(32, 151, 231, 0.6)' 
                     ],
                     borderColor: [
                         'rgba(197, 64, 113, 0.5)',
                         'rgba(62, 144, 74, 0.5)',
                         'rgba(44, 111, 155, 0.5)' 
                     ],
-                    hoverBackgroundColor: [
-                        'rgba(253, 113, 143, 0.9)',
-                        'rgba(85, 192, 101, 0.9)',
-                        'rgba(67, 165, 231, 0.9)' 
-                    ],
                     barPercentage: 1.1,
 
                 }]
             },
             options: {
-                
+                layout:{
+                    padding:{
+                        top:30
+                    }
+                },
                 scales:{
                     y: {
                         type: 'logarithmic',
@@ -147,7 +146,7 @@ fetch('./data_Lab_macket_v1.json')
                         ticks:{
                             font: {
                                 weight: 'bold',
-                                size: 14,
+                                size: 15,
                                 color: '#2f3e46',
                             }
                         },
@@ -155,14 +154,21 @@ fetch('./data_Lab_macket_v1.json')
                 },
 
                 plugins: {
+
+                    tooltip: {
+                        enabled: false 
+                    },
+
                     legend:{display: false},
+
                     datalabels:{
                         labels: [{
                             color: '#2f3e46',
                             anchor: 'end',
                             align: 'top',
-                            offset: -30,
+                            offset: 0,
                             clip: false,
+
                             font: {
                                 weight: 'bold',
                                 size: 16,
@@ -175,3 +181,76 @@ fetch('./data_Lab_macket_v1.json')
         });
     });
     
+
+// ======= График Отображения состояний системы DONUT Chart.js =========
+
+// ======= Цифры в центре =======
+const centerTextPlugin = {
+    id: 'centerText',
+    beforeDraw(chart) {
+        const { width, height, ctx } = chart;
+
+        ctx.save();
+        ctx.font = 'bold 24px Manrope';
+        ctx.fillStyle = '#2f3e46';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        const value = chart.data.datasets[0].data[0];
+        const total = chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+        const percent = Math.round((value / total) * 100);
+
+        ctx.fillText(percent + '%', width / 2, height / 2);
+    }
+};
+
+
+// ======= Donut chart =======
+fetch('./data_Lab_macket_v1.json')
+    .then(response => response.json())
+    .then(data => {
+
+        const states = [
+            data.LED1,
+            data.LED2,
+            data.LED3,
+            data.button1State,
+            data.button2State,
+            data.button3State
+        ];
+
+        const activeCount = states.reduce((sum, val) => sum + val, 0);
+        const total = states.length;
+
+        const donut_chart = new Chart(document.querySelector('#donut_chart_system'), {
+            type: 'doughnut',
+            data: {
+                labels: ['ON', 'OFF'], // не нужно
+                datasets: [{
+                    data: [activeCount, total - activeCount],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.8)', // вкл
+                        'rgba(200, 200, 200, 0.3)' // выкл
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '80%', // толщина кольца
+
+                plugins: {
+
+                    datalabels:{
+                        display: false
+                    },
+
+                    legend: { display: false },
+
+                    tooltip: {
+                        enabled: false
+                    }
+                }
+            },
+            plugins: [centerTextPlugin]
+        });      
+    });
