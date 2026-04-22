@@ -82,6 +82,22 @@ function countActive(obj, conditionFn) {
         total: keys.length
     };
 }
+// ===== Подсчет работающих Led и ButtonState =====
+function updateIndicator(indicatorId, textId, activeCount) {
+    const indicator = document.getElementById(indicatorId);
+    const text = document.getElementById(textId);
+
+    indicator.classList.remove('active', 'inactive');
+
+    if (activeCount > 0) {
+        indicator.classList.add('active');
+        text.textContent = 'ВКЛ';
+    } else {
+        indicator.classList.add('inactive');
+        text.textContent = 'ВЫКЛ';
+    }
+}
+
 async function loadKpiData() {
     try {
         const response = await fetch('data_Lab_macket_v1.json');
@@ -102,6 +118,9 @@ async function loadKpiData() {
 
         document.getElementById('leds_value').textContent = `${leds.active}/${leds.total}`;
         document.getElementById('button_value').textContent = `${buttons.active}/${buttons.total}`;
+
+        updateIndicator('led_indicator','led_indicator_text', leds.active);
+        updateIndicator('button_indicator','button_indicator_text', buttons.active);
 
     } catch (error) {
         console.error('Ошибка загрузки JSON:', error);
@@ -206,7 +225,7 @@ const centerTextPlugin = {
         const { width, height, ctx } = chart;
 
         ctx.save();
-        ctx.font = 'bold 24px Manrope';
+        ctx.font = 'bold 36px Manrope';
         ctx.fillStyle = '#2f3e46';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -238,14 +257,14 @@ fetch('./data_Lab_macket_v1.json')
                 datasets: [{
                     data: [activeCount, total - activeCount],
                     backgroundColor: [
-                        'rgba(75, 192, 192, 0.8)', // вкл
+                        'rgba(125, 120, 212, 0.92)', // вкл
                         'rgba(200, 200, 200, 0.3)' // выкл
                     ],
                     borderWidth: 0
                 }]
             },
             options: {
-                cutout: '60%', // толщина кольца
+                cutout: '70%', // толщина кольца
 
                 plugins: {
 

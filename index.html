@@ -142,26 +142,31 @@
                 </div>
 
                 <section class="kpi_status_system">
+                    
                     <ul class="kpi_status_list">
                         <li>
-                            <dl class="kpi_leds_status">
-                                <dt class="status_label">LED
-                                    <span></span>
-                                </dt>
-                                <dd class="system_value">
+                            <div class="kpi_leds_status">
+                                <div class="indicator_label">
+                                    <span class="system_indicator" id="led_indicator"></span>
+                                    <span class="indicator_text" id="led_indicator_text">ВЫКЛ</span>
+                                </div>
+                                <span class="status_label">LED</span>
+                                <span class="system_value">
                                     <span id="leds_value"></span>
-                                </dd>
-                            </dl>
+                                </span>
+                            </div>
                         </li>
                         <li>
-                            <dl class="kpi_button_status">
-                                <dt class="status_label">Button
-                                    <span></span>
-                                </dt>
-                                <dd class="system_value">
+                            <div class="kpi_button_status">
+                                <div class="indicator_label">
+                                    <span class="system_indicator" id="button_indicator"></span>
+                                    <span class="indicator_text" id="button_indicator_text">ВЫКЛ</span>
+                                </div>
+                                <span class="status_label">Button</span>
+                                <span class="system_value">
                                     <span id="button_value"></span>
-                                </dd>
-                            </dl>
+                                </span>
+                            </div>
                         </li>
                     </ul>
                 </section>
