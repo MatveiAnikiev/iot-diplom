@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Элементы управления</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../normilize.css">
+    <link rel="stylesheet" href="../navmenu.css">
+    <link rel="stylesheet" href="../CSS/controls.css">
+</head>
+
+<body>
+    <aside class="sidebar collapsed">
+        <div class="sidebar_body">
+            <button class="burger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="sidebar_menu">
+                <ul class="navmenu">
+                    <li><a href="../index.html" class="nav_link">
+                            <span class="nav_icon">
+                                <i data-lucide="layout-dashboard"></i>
+                            </span>
+                            <span class="nav_text">Главная</span>
+                        </a></li>
+                    <li><a href="#" class="nav_link">
+                            <span class="nav_icon">
+                                <i data-lucide="chart-column-big"></i>
+                            </span>
+                            <span class="nav_text">Аналитика</span>
+                        </a></li>
+                    <li><a href="controls.html" class="nav_link active">
+                            <span class="nav_icon">
+                                <i data-lucide="square-power"></i>
+                            </span>
+                            <span class="nav_text">Элементы управлeния</span>
+                        </a></li>
+                    <li><a href="#" class="nav_link">
+                            <span class="nav_icon">
+                                <i data-lucide="info"></i>
+                            </span>
+                            <span class="nav_text">Информация</span>
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="content">
+
+        <section class="led_kpi">
+            <h2 class="led_title">LED Индикаторы</h2>
+            <li>
+                <dl class="kpi_led_metric">
+                    <dt class="kpi_led_label">LED_1
+                        <span class="led_icon">
+                            <i data-lucide="#"></i>
+                        </span>
+                    </dt>
+                    <span></span>
+                </dl>
+            </li>
+
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="../JS/scripts.js"></script>
+    <!-- Lucide icons inclussion -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
