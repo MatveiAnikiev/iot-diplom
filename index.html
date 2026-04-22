@@ -67,7 +67,7 @@
             <h2 class="kpi_title">Текущие показатели</h2>
         
             <ul class="kpi_list">
-                <li class="kpi_item">
+                <li>
                     <dl class="kpi_metric">
                         <dt class="kpi_label">Температура
                             <span class="kpi_icon" id="kpi_temp">
@@ -125,21 +125,47 @@
                 </li>
             </ul>
         </section>
+
         <div class="chart_section">
             
-        <section class="section_chart_RGB">
-            <h2 class="bar_chart_title">Цветовые компоненты RGB</h2>
-            <div class="chart_RGB">
-                <canvas id="bar_chart_RGB"></canvas>
-            </div>
-        </section>
+            <section class="section_chart_RGB">
+                <h2 class="bar_chart_title">Цветовые компоненты RGB</h2>
+                <div class="chart_RGB">
+                    <canvas id="bar_chart_RGB"></canvas>
+                </div>
+            </section>
 
-        <section class="section_chart_system">
-            <h2 class="donut_chart_title">Состояние системы</h2>
-            <div class="chart_system">
-                <canvas id="donut_chart_system"></canvas>
-            </div>
-        </section>
+            <section class="section_chart_system">
+                <h2 class="doughnut_chart_title">Состояние системы</h2>
+                <div class="chart_system">
+                    <canvas id="doughnut_chart_system"></canvas>
+                </div>
+
+                <section class="kpi_status_system">
+                    <ul class="kpi_status_list">
+                        <li>
+                            <dl class="kpi_leds_status">
+                                <dt class="status_label">LED
+                                    <span></span>
+                                </dt>
+                                <dd class="system_value">
+                                    <span id="leds_value"></span>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl class="kpi_button_status">
+                                <dt class="status_label">Button
+                                    <span></span>
+                                </dt>
+                                <dd class="system_value">
+                                    <span id="button_value"></span>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </section>
+            </section>
         </div>
     </main>
 

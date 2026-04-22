@@ -254,29 +254,79 @@ body {
     margin-right: 12px;
 }
 
-/*========= Секция графиков ===========*/
 .chart_section{
+    background-color: red;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+.section_chart_RGB{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+}
+.bar_chart_title{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.chart_RGB{
+    background-color: #f8f8ff;
+    position: relative;
+    min-width: 300px;
+}
+
+
+.section_chart_system{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 300px;
+    
+}
+.doughnut_chart_title{
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+
+.chart_system{
+    background-color: #f8f8ff;
+    position: relative;
+    width: 200px;
+    height: auto;
+}
+
+
+/*========= Секция графиков ===========*/
+/* .chart_section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     
 }
 
-/*========= График RGB ===========*/
+/*========= График RGB ===========
 
-/* общий блок текста и графика*/
+/* общий блок текста и графика
 .section_chart_RGB{
     margin: 20px 0;
     display: flex;
     flex-direction: column;
     width: 50%;
-    min-width: 600px;
+    min-width: 300px;
 }
 
 .bar_chart_title{
     margin-bottom: 30px;
     padding-left: 10px;
+    padding-top: 20px;
 }
 
-/* график */
+/* график 
 .chart_RGB{
     position: relative;
     width: 100%;
@@ -285,25 +335,33 @@ body {
 
 /*========= График System State ===========*/
 
-/* общий блок текста и графика*/
+/* общий блок текста и графика
 .section_chart_system{
     margin: 20px 0;
     display: flex;
     flex-direction: column;
     width: 50%;
-    min-width: 600px;
+    min-width: 300px;
+    background-color: #E8E8F5;
+    border-radius: 10px;
 }
 
-.donut_chart_title{
+.doughnut_chart_title{
     margin-bottom: 30px;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: left;
 }
 
-/* график */
+/* график 
 .chart_system{
-    position: relative;
-    width: 30%;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    height: 150px;
+    
+} */
 
 /*========= Устройства ===========*/
 /*устройства с мышью*/

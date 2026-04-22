@@ -72,8 +72,16 @@ navLinks.forEach(link => {
     });
 });
 
-/* ===== Загрузка данных из JSON ===== */
+// ===== Загрузка данных из JSON ===== 
+function countActive(obj, conditionFn) {
+    const keys = Object.keys(obj).filter(conditionFn);
+    const activeCount = keys.reduce((sum, key) => sum + Number(obj[key] === 1), 0);
 
+    return {
+        active: activeCount,
+        total: keys.length
+    };
+}
 async function loadKpiData() {
     try {
         const response = await fetch('data_Lab_macket_v1.json');
@@ -88,6 +96,13 @@ async function loadKpiData() {
         document.getElementById('pressure_value').textContent = data.pressure;
         document.getElementById('light_value').textContent = data.ambient_light;
         document.getElementById('brightness_value').textContent = data.lightness;
+
+        const leds = countActive(data, key => key.startsWith('LED'));
+        const buttons = countActive(data, key => key.startsWith('button') && key.endsWith('State'));
+
+        document.getElementById('leds_value').textContent = `${leds.active}/${leds.total}`;
+        document.getElementById('button_value').textContent = `${buttons.active}/${buttons.total}`;
+
     } catch (error) {
         console.error('Ошибка загрузки JSON:', error);
     }
@@ -101,7 +116,7 @@ Chart.register(ChartDataLabels);
 fetch('./data_Lab_macket_v1.json')
     .then(response => response.json()) // ответ в JSON
     .then(data => {
-        const pie_chart_rgb = new Chart(document.querySelector('#bar_chart_RGB'), {
+        const bar_chart_rgb = new Chart(document.querySelector('#bar_chart_RGB'), {
             type: 'bar',
             data: {
                 labels: ['Red', 'Green', 'Blue', ],
@@ -205,24 +220,18 @@ const centerTextPlugin = {
 };
 
 
-// ======= Donut chart =======
+// ======= Doughnut chart =======
 fetch('./data_Lab_macket_v1.json')
     .then(response => response.json())
     .then(data => {
 
-        const states = [
-            data.LED1,
-            data.LED2,
-            data.LED3,
-            data.button1State,
-            data.button2State,
-            data.button3State
-        ];
+        const leds = countActive(data, key => key.startsWith('LED'));
+        const buttons = countActive(data, key => key.startsWith('button') && key.endsWith('State'));
 
-        const activeCount = states.reduce((sum, val) => sum + val, 0);
-        const total = states.length;
+        const activeCount = leds.active + buttons.active;
+        const total = leds.total + buttons.total;
 
-        const donut_chart = new Chart(document.querySelector('#donut_chart_system'), {
+        const donut_chart = new Chart(document.querySelector('#doughnut_chart_system'), {
             type: 'doughnut',
             data: {
                 labels: ['ON', 'OFF'], // не нужно
@@ -236,7 +245,7 @@ fetch('./data_Lab_macket_v1.json')
                 }]
             },
             options: {
-                cutout: '80%', // толщина кольца
+                cutout: '60%', // толщина кольца
 
                 plugins: {
 
