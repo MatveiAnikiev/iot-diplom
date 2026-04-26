@@ -1,0 +1,86 @@
+.led_kpi{
+}
+
+.led_title{
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.led_list{
+    background-color: #e8e8f5;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    
+
+
+}
+
+.led_card{
+    background-color: #ffffff;
+    border-radius: 10px;;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.led_header{
+    
+}
+
+.led_icon{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #E8E8F5;
+    border-radius: 12px;
+    
+}
+
+.led_label{
+    margin-top: 5px;
+}
+
+.led_status{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.led_stat{
+    flex: 1;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #e8e8f5;
+    border-radius: 5px;
+}
+
+.system_indicator {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #9ca3af;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.indicator_label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.system_indicator.active {
+    background-color: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+.system_indicator.inactive {
+    background-color: #9ca3af;
+    box-shadow: 0 0 6px rgba(156, 163, 175, 0.35);
+}
