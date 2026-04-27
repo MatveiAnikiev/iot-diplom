@@ -1,6 +1,8 @@
+/* ===== LED KPI ===== */
+
 .led_title{
     padding: 0 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .led_list{
@@ -10,9 +12,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
-    
-
-
+    margin-bottom: 20px;
 }
 
 .led_card{
@@ -22,14 +22,15 @@
     flex-direction: column;
     padding: 20px;
     position: relative;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .led_icon{
     display:inline-flex;
     justify-content: center;
     align-items: center;
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     background-color: #E8E8F5;
     border-radius: 12px;
     
@@ -76,4 +77,63 @@
 .system_indicator.inactive {
     background-color: #9ca3af;
     box-shadow: 0 0 6px rgba(156, 163, 175, 0.35);
+}
+
+/* ===== BUTTON KPI ===== */
+
+/*main*/
+.button_monitors{
+    
+}
+
+.button_title{
+    margin-bottom: 20px;
+}
+
+.button_list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button_card{
+    background-color: #e8e8f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    
+}
+
+.button_header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.button_icon{
+    width: 42px;
+    height: 42px;
+    background-color: #ccccdf;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_circle{
+    width: 21px;
+    height: 21px;
+    border: 2px solid #3b3c3dec;
+    border-radius: 50%;
+}
+
+.button_status{
+    background-color: #ccccdf;
+    padding: 5px 8px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
