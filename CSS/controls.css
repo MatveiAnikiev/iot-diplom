@@ -1,7 +1,7 @@
 /* ===== LED KPI ===== */
 
 .led_title{
-    padding: 0 20px;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -54,6 +54,11 @@
     border-radius: 5px;
 }
 
+.led_stat.active {
+    background-color: #0b4497;
+    color: #ffffff;
+}
+
 .system_indicator {
     width: 8px;
     height: 8px;
@@ -80,11 +85,6 @@
 }
 
 /* ===== BUTTON KPI ===== */
-
-/*main*/
-.button_monitors{
-    
-}
 
 .button_title{
     margin-bottom: 20px;
@@ -120,6 +120,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .button_circle{
@@ -129,6 +130,15 @@
     border-radius: 50%;
 }
 
+.point{
+    display: none;
+    width: 9px;
+    height: 9px;
+    background-color: #b9d2ff;
+    border-radius: 50%;
+    position: absolute;
+}
+
 .button_status{
     background-color: #ccccdf;
     padding: 5px 8px;
@@ -136,4 +146,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.button_card.active .button_icon {
+    background-color: #0b4497;
+}
+
+.button_card.active .button_circle {
+    border-color: #b9d2ff;
+}
+
+.button_card.active .button_status {
+    background-color: #0b4497;
+}
+
+.button_card.active .button_state {
+    color: #ffffff;
+}
+.button_card.active .point {
+    display: block;
 }

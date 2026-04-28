@@ -56,7 +56,7 @@
             <h2 class="led_title">LED Индикаторы</h2>
             <ul class="led_list">
                 <li>
-                    <div class="led_card">
+                    <div class="led_card" data-led-key="LED1">
                         <div class="led_header">
                             <span class="led_icon">
                                 <i data-lucide="lightbulb"></i>
@@ -64,16 +64,16 @@
                             <h3 class="led_label">LED_1</h3>
                         </div>
                         <div class="indicator_label">
-                            <span class="system_indicator" id="led1_indicator"></span>
+                            <span class="system_indicator"></span>
                         </div>
                         <div class="led_status">
-                            <span class="led_stat" id="led1_on">Включен</span>
-                            <span class="led_stat" id="led1_off">Выключен</span>
+                            <span class="led_stat" data-led-state="on">Включен</span>
+                            <span class="led_stat" data-led-state="off">Выключен</span>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="led_card">
+                    <div class="led_card" data-led-key="LED2">
                         <div class="led_header">
                             <span class="led_icon">
                                 <i data-lucide="lightbulb"></i>
@@ -81,16 +81,16 @@
                             <h3 class="led_label">LED_2</h3>
                         </div>
                         <div class="indicator_label">
-                            <span class="system_indicator" id="led2_indicator"></span>
+                            <span class="system_indicator"></span>
                         </div>
                         <div class="led_status">
-                            <span class="led_stat" id="led2_on">Включен</span>
-                            <span class="led_stat" id="led2_off">Выключен</span>
+                            <span class="led_stat" data-led-state="on">Включен</span>
+                            <span class="led_stat" data-led-state="off">Выключен</span>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="led_card">
+                    <div class="led_card" data-led-key="LED3">
                         <div class="led_header">
                             <span class="led_icon">
                                 <i data-lucide="lightbulb"></i>
@@ -98,11 +98,11 @@
                             <h3 class="led_label">LED_3</h3>
                         </div>
                         <div class="indicator_label">
-                            <span class="system_indicator" id="led3_indicator"></span>
+                            <span class="system_indicator" ></span>
                         </div>
                         <div class="led_status">
-                            <span class="led_stat" id="led3_on">Включен</span>
-                            <span class="led_stat" id="led3_off">Выключен</span>
+                            <span class="led_stat" data-led-state="on">Включен</span>
+                            <span class="led_stat" data-led-state="off">Выключен</span>
                         </div>
                     </div>
                 </li>
@@ -113,42 +113,44 @@
             <h2 class="button_title">Состояние Тумблеров</h2>
             <ul class="button_list">
                 <li>
-                    <div class="button_card">
+                    <div class="button_card" data-button-key="button1State">
                         <div class="button_header">
-                            <div class="button_icon" id="button_icon_1">
-                                <span class="button_circle" id="circle_1"></span>
-                                <span class="point" id="point_1"></span>
+                            <div class="button_icon">
+                                <span class="button_circle"></span>
+                                <span class="point"></span>
                             </div>
                             <h3 class="button_label">Тумблер 1</h3>
                         </div>
-                        <div class="button_status" id="button_status_1">
-                            <span class="button_state" id="button1_state_text">Неактивен</span>
+                        <div class="button_status">
+                            <span class="button_state">Неактивен</span>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="button_card">
+                    <div class="button_card" data-button-key="button2State">
                         <div class="button_header">
-                            <div class="button_icon" id="button_icon_2">
-                                <span class="button_circle" id="circle_2"></span>
+                            <div class="button_icon" >
+                                <span class="button_circle"></span>
+                                <span class="point"></span>
                             </div>
                             <h3 class="button_label">Тумблер 2</h3>
                         </div>
-                        <div class="button_status" id="button_status_2">
-                            <span class="button_state" id="button2_state_text">Неактивен</span>
+                        <div class="button_status">
+                            <span class="button_state">Неактивен</span>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="button_card">
+                    <div class="button_card" data-button-key="button3State">
                         <div class="button_header">
-                            <div class="button_icon" id="button_icon_3">
-                                <span class="button_circle" id="circle_3"></span>
+                            <div class="button_icon">
+                                <span class="button_circle"></span>
+                                <span class="point"></span>
                             </div>
                             <h3 class="button_label">Тумблер 3</h3>
                         </div>
-                        <div class="button_status" id="button_status_3">
-                            <span class="button_state" id="button3_state_text">Неактивен</span>
+                        <div class="button_status">
+                            <span class="button_state">Неактивен</span>
                             
                         </div>
                     </div>
@@ -156,9 +158,8 @@
             </ul>
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    <script src="../JS/scripts.js"></script>
+    <script src="../JS/burger.js"></script>
+    <script src="../JS/controls.js"></script>
     <!-- Lucide icons inclussion -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
