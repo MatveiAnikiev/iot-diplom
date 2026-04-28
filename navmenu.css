@@ -211,10 +211,12 @@ body {
     
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
 .kpi_metric:hover{
     transform: translateY(-0.22em);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .kpi_label{
     display: flex;
     justify-content: space-between;
@@ -297,6 +299,7 @@ body {
     margin-bottom: 30px;
     padding-top: 20px;
     text-align: center;
+    line-height: 1.5;
 }
 
 .chart_system{
