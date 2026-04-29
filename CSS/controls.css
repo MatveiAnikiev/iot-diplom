@@ -1,22 +1,25 @@
 /* ===== LED KPI ===== */
+.led_kpi{
+    margin-bottom: 60px;
+}
 
-.led_title{
+.led_title {
     margin-bottom: 20px;
 }
 
-.led_list{
+.led_list {
     background-color: #e8e8f5;
     border-radius: 10px;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
-    margin-bottom: 20px;
 }
 
-.led_card{
+.led_card {
     background-color: #ffffff;
-    border-radius: 10px;;
+    border-radius: 10px;
+    ;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -24,28 +27,28 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.led_icon{
-    display:inline-flex;
+.led_icon {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 42px;
     height: 42px;
     background-color: #E8E8F5;
     border-radius: 12px;
-    
+
 }
 
-.led_label{
+.led_label {
     margin-top: 5px;
 }
 
-.led_status{
+.led_status {
     display: flex;
     gap: 30px;
     margin-top: 20px;
 }
 
-.led_stat{
+.led_stat {
     flex: 1;
     text-align: center;
     padding: 5px 10px;
@@ -73,45 +76,51 @@
     top: 20px;
     right: 20px;
 }
+
 .system_indicator.active {
     background-color: #22c55e;
     box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
 }
 
 .system_indicator.inactive {
-    background-color: #9ca3af;
-    box-shadow: 0 0 6px rgba(156, 163, 175, 0.35);
+    background-color: #ff1d1d;
+    box-shadow: 0 0 6px rgba(170, 27, 27, 0.35);
 }
 
 /* ===== BUTTON KPI ===== */
 
-.button_title{
+.button_title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button_list {
+    columns: 2;
+    column-gap: clamp(40px, 8vw, 200px);
+}
+
+.button_list li {
+    break-inside: avoid;
     margin-bottom: 20px;
 }
 
-.button_list{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.button_card{
+.button_card {
     background-color: #e8e8f5;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
-    
+
 }
 
-.button_header{
+.button_header {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.button_icon{
+.button_icon {
     width: 42px;
     height: 42px;
     background-color: #ccccdf;
@@ -122,14 +131,14 @@
     position: relative;
 }
 
-.button_circle{
+.button_circle {
     width: 21px;
     height: 21px;
     border: 2px solid #3b3c3dec;
     border-radius: 50%;
 }
 
-.point{
+.point {
     display: none;
     width: 9px;
     height: 9px;
@@ -138,7 +147,7 @@
     position: absolute;
 }
 
-.button_status{
+.button_status {
     background-color: #ccccdf;
     padding: 5px 8px;
     border-radius: 16px;
@@ -162,6 +171,15 @@
 .button_card.active .button_state {
     color: #ffffff;
 }
+
 .button_card.active .point {
     display: block;
+}
+
+/* ===== Мобильная версия ===== */
+@media (max-width: 768px) {
+    .button_list {
+        columns: 1;
+        column-gap: 0;
+    }
 }

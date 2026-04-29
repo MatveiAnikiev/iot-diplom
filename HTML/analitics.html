@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитика</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../normilize.css">
+    <link rel="stylesheet" href="../navmenu.css">
+    <link rel="stylesheet" href="../CSS/analitics.css">
+</head>
+<body>
+    <aside class="sidebar collapsed">
+        <div class="sidebar_body">
+            <button class="burger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <nav class="sidebar_menu">
+                <ul class="navmenu">
+                    <li><a href="../index.html" class="nav_link">
+                            <span class="nav_icon">
+                                <i data-lucide="layout-dashboard"></i>
+                            </span>
+                            <span class="nav_text">Главная</span>
+                        </a></li>
+                    <li><a href="analitics.html" class="nav_link active">
+                            <span class="nav_icon">
+                                <i data-lucide="chart-column-big"></i>
+                            </span>
+                            <span class="nav_text">Аналитика</span>
+                        </a></li>
+                    <li><a href="controls.html" class="nav_link">
+                            <span class="nav_icon">
+                                <i data-lucide="square-power"></i>
+                            </span>
+                            <span class="nav_text">Элементы управлeния</span>
+                        </a></li>
+                    <li><a href="#" class="nav_link">
+                            <span class="nav_icon">
+                                <i data-lucide="info"></i>
+                            </span>
+                            <span class="nav_text">Информация</span>
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="content">
+        <h2 class="main_title">Аналитика данных макета</h2>
+
+    <section class="trends_charts">
+        <h3 class="title_charts">История показателей датчиков</h3>
+        <p class="charts_description">
+           Графики отображают изменение температуры, давления, освещенности и яркости во времени.
+        </p>
+    
+        <div class="line_charts_grid">
+            <div class="line_chart">
+                <h3 class="chart_card_title">Температура</h3>
+                <div class="chart_canvas">
+                    <canvas id="line_chart_temperature"></canvas>
+                </div>
+            </div>
+    
+            <div class="line_chart">
+                <h3 class="chart_card_title">Давление</h3>
+                <div class="chart_canvas">
+                    <canvas id="line_chart_pressure"></canvas>
+                </div>
+            </div>
+    
+            <div class="line_chart">
+                <h3 class="chart_card_title">Освещенность</h3>
+                <div class="chart_canvas">
+                    <canvas id="line_chart_light"></canvas>
+                </div>
+            </div>
+    
+            <div class="line_chart">
+                <h3 class="chart_card_title">Яркость</h3>
+                <div class="chart_canvas">
+                    <canvas id="line_chart_lightness"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="../JS/burger.js"></script>
+    <script src="../JS/analitics.js"></script>
+    <!-- Lucide icons inclussion -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
