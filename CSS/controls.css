@@ -1,6 +1,14 @@
+.main_title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 /* ===== LED KPI ===== */
 .led_kpi{
-    margin-bottom: 60px;
+    background-color: #e8e8f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .led_title {
@@ -8,9 +16,7 @@
 }
 
 .led_list {
-    background-color: #e8e8f5;
-    border-radius: 10px;
-    padding: 20px;
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
@@ -95,13 +101,35 @@
 }
 
 .button_list {
-    columns: 2;
+    --rows: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(var(--rows), auto);
+    grid-auto-flow: column;
     column-gap: clamp(40px, 8vw, 200px);
+    row-gap: 20px;
+    
 }
 
-.button_list li {
-    break-inside: avoid;
-    margin-bottom: 20px;
+/* === столбцы для разного кол-ва карточек ===*/
+.button_list:has(li:nth-child(1)) {
+    --rows: 1;
+}
+
+.button_list:has(li:nth-child(3)) {
+    --rows: 2;
+}
+
+.button_list:has(li:nth-child(5)) {
+    --rows: 3;
+}
+
+.button_list:has(li:nth-child(7)) {
+    --rows: 4;
+}
+
+.button_list:has(li:nth-child(9)) {
+    --rows: 5;
 }
 
 .button_card {
@@ -177,9 +205,12 @@
 }
 
 /* ===== Мобильная версия ===== */
+
 @media (max-width: 768px) {
     .button_list {
-        columns: 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-flow: row;
         column-gap: 0;
     }
 }

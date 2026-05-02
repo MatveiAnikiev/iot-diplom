@@ -110,11 +110,11 @@ function createLineChart(canvasId, historyData, label, unit) {
                     title: {
                         display: true,
                         text: "Время",
-                        color: "#6b7280",
+                        color: "#474747",
                         font: {
                             family: "Manrope",
-                            size: 11,
-                            weight: "600"
+                            size: 14,
+                            weight: "800"
                         }
                     },
 
@@ -143,11 +143,11 @@ function createLineChart(canvasId, historyData, label, unit) {
                     title: {
                         display: true,
                         text: unit,
-                        color: "#6b7280",
+                        color: "#474747",
                         font: {
                             family: "Manrope",
-                            size: 11,
-                            weight: "600"
+                            size: 14,
+                            weight: "800"
                         }
                     },
 
