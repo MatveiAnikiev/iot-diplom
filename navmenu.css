@@ -160,7 +160,6 @@ body {
 /* ========== Контентная часть =========*/
 .content {
     padding: 20px;
-    margin-left: 40px;
 }
 
 .content_text{
@@ -191,25 +190,24 @@ body {
 }
 
 /* Расположение KPI карточек */
-.kpi_list{
-    display: flex;
-    flex-wrap: wrap;
+.kpi_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
     justify-content: space-between;
     gap: 30px;
-    padding: 0px 20px;
+    padding: 0 20px;
 }
 
 /*KPI карточки*/
-.kpi_metric{
-    width: 250px;
-    height: 100px;
+.kpi_metric {
+    width: 100%;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .kpi_metric:hover{
@@ -312,6 +310,7 @@ body {
  /*========= KPI SYSTEM =========*/
 
 .kpi_status_system{
+    margin-top: auto;
     padding: 20px 0px 20px 0;
 }
 .kpi_status_list{
@@ -326,7 +325,6 @@ body {
 .kpi_button_status{
     background-color:#ffffff;
     border-radius: 10px;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -382,7 +380,11 @@ body {
 /*========= Устройства ===========*/
 
 /*устройства с мышью*/
-@media (min-width: 1025px) {
+@media (hover: hover) and (pointer: fine) and (min-width: 1025px) {
+    .content {
+            margin-left: 40px;
+        }
+
     .sidebar {
         width: 40px;
     }
@@ -406,35 +408,91 @@ body {
 }
 
 /*мобильные устройства*/
-@media (max-width:1024px) {
+@media (max-width: 768px) {
     .burger {
         display: flex;
     }
 
     .sidebar {
-        width: 40px;
-        /* свернутое меню */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        z-index: 100;
+        overflow: hidden;
+        background: #ffffff;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(47, 62, 70, 0.15);
+        box-shadow: none;
+        transition: height 0.5s ease, box-shadow 0.5s ease;
     }
 
-    .sidebar .nav_text {
+    .sidebar_body {
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .burger {
+        width: 25px;
+        height: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .sidebar:not(.expanded) .nav_link {
         opacity: 0;
-        /* текст скрыт по умолчанию */
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(-10px);
+    }
+
+    .sidebar:not(.expanded) .nav_text {
+        opacity: 0;
         width: 0;
         overflow: hidden;
         pointer-events: none;
-        transition: opacity 0.5s ease, width 0.5s ease;
     }
 
     .sidebar.expanded {
-        width: 130px;
-        /* раскрытое меню */
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .sidebar.expanded .nav_link {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .sidebar.expanded .nav_text {
         opacity: 1;
-        /* текст видим */
         width: auto;
         pointer-events: auto;
-        /* снова кликабельно */
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 80px 20px 20px;
+    }
+
+    .kpi_list {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .kpi_list li {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .kpi_metric {
+        width: 100%;
     }
 }

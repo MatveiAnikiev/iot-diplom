@@ -38,12 +38,6 @@
                             </span>
                             <span class="nav_text">Элементы управлeния</span>
                         </a></li>
-                    <li><a href="#" class="nav_link">
-                            <span class="nav_icon">
-                                <i data-lucide="info"></i>
-                            </span>
-                            <span class="nav_text">Информация</span>
-                        </a></li>
                 </ul>
             </nav>
         </div>
@@ -52,42 +46,139 @@
     <main class="content">
         <h1 class="main_title">Аналитика данных макета</h1>
 
-    <section class="trends_charts">
-        <h2 class="title_charts">История показателей датчиков</h2>
-        <p class="charts_description">
-           Графики отображают изменение температуры, давления, освещенности и яркости во времени.
-        </p>
-    
-        <div class="line_charts_grid">
-            <div class="line_chart">
-                <h3 class="chart_card_title">Температура</h3>
-                <div class="chart_canvas">
-                    <canvas id="line_chart_temperature"></canvas>
+        <section class="kpi">
+            <h2 class="kpi_title">Текущие показатели</h2>
+        
+            <ul class="kpi_list">
+                <li>
+                    <dl class="kpi_metric">
+                        <dt class="kpi_label">Температура
+                            <span class="kpi_icon" id="kpi_temp">
+                                <i data-lucide="thermometer"></i>
+                            </span>
+                        </dt>
+                        <dd class="kpi_value">
+                            <span id="temperature_value"></span>
+                            <span class="kpi_unit">°C</span>
+                        </dd>
+                    </dl>
+                </li>
+        
+                <li>
+                    <dl class="kpi_metric">
+                        <dt class="kpi_label">Давление
+                            <span class="kpi_icon" id="kpi_pressure">
+                                <i data-lucide="gauge"></i>
+                            </span>
+                        </dt>
+                        <dd class="kpi_value">
+                            <span id="pressure_value"></span>
+                            <span class="kpi_unit">кПа</span>
+                        </dd>
+                    </dl>
+        
+                </li>
+        
+                <li>
+                    <dl class="kpi_metric">
+                        <dt class="kpi_label">Освещённость
+                            <span class="kpi_icon" id="kpi_light">
+                                <i data-lucide="lightbulb"></i>
+                            </span>
+                        </dt>
+                        <dd class="kpi_value">
+                            <span id="light_value"></span>
+                            <span class="kpi_unit">лк</span>
+                        </dd>
+                    </dl>
+                </li>
+        
+                <li>
+                    <dl class="kpi_metric">
+                        <dt class="kpi_label">Яркость
+                            <span class="kpi_icon" id="kpi_lightless">
+                                <i data-lucide="sun"></i>
+                            </span>
+                        </dt>
+                        <dd class="kpi_value">
+                            <span id="brightness_value"></span>
+                            <span class="kpi_unit">%</span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+
+        <section class="trends_charts">
+            <h2 class="title_charts">История показателей датчиков</h2>
+            <p class="charts_description">
+            Графики отображают изменение температуры, давления, освещенности и яркости во времени.
+            </p>
+        
+            <div class="line_charts_grid">
+                <div class="line_chart">
+                    <h3 class="chart_card_title">Температура</h3>
+                    <div class="chart_canvas">
+                        <canvas id="line_chart_temperature"></canvas>
+                    </div>
+                </div>
+        
+                <div class="line_chart">
+                    <h3 class="chart_card_title">Давление</h3>
+                    <div class="chart_canvas">
+                        <canvas id="line_chart_pressure"></canvas>
+                    </div>
+                </div>
+        
+                <div class="line_chart">
+                    <h3 class="chart_card_title">Освещенность</h3>
+                    <div class="chart_canvas">
+                        <canvas id="line_chart_light"></canvas>
+                    </div>
+                </div>
+        
+                <div class="line_chart">
+                    <h3 class="chart_card_title">Яркость</h3>
+                    <div class="chart_canvas">
+                        <canvas id="line_chart_lightness"></canvas>
+                    </div>
                 </div>
             </div>
-    
-            <div class="line_chart">
-                <h3 class="chart_card_title">Давление</h3>
-                <div class="chart_canvas">
-                    <canvas id="line_chart_pressure"></canvas>
+        </section>
+
+        <section class="led_strip_section">
+            <h2 class="led_strip_title">LED-лента</h2>
+        
+            <ul class="led_strip_list" id="led_strip_list"></ul>
+        </section>
+        
+        <section class="accelerometer_section">
+            <h2 class="accelerometer_title">Показания акселерометра</h2>
+        
+            <div class="accelerometer_content">
+                <ul class="accelerometer_values">
+                    <li class="accelerometer_card">
+                        <span class="accelerometer_axis">X</span>
+                        <span class="accelerometer_value" id="acceleration_x_value"></span>
+                    </li>
+        
+                    <li class="accelerometer_card">
+                        <span class="accelerometer_axis">Y</span>
+                        <span class="accelerometer_value" id="acceleration_y_value"></span>
+                    </li>
+        
+                    <li class="accelerometer_card">
+                        <span class="accelerometer_axis">Z</span>
+                        <span class="accelerometer_value" id="acceleration_z_value"></span>
+                    </li>
+                </ul>
+        
+                <div class="accelerometer_chart">
+                    <canvas id="accelerometer_bar_chart"></canvas>
                 </div>
             </div>
-    
-            <div class="line_chart">
-                <h3 class="chart_card_title">Освещенность</h3>
-                <div class="chart_canvas">
-                    <canvas id="line_chart_light"></canvas>
-                </div>
-            </div>
-    
-            <div class="line_chart">
-                <h3 class="chart_card_title">Яркость</h3>
-                <div class="chart_canvas">
-                    <canvas id="line_chart_lightness"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -4,7 +4,8 @@
 }
 
 .trends_charts {
-    background-color: #e8e8f5;
+    margin-top: 25px;
+    /*background-color: #f1f1fa;*/
     border-radius: 10px;
     padding: 20px;
 }
@@ -31,7 +32,8 @@
 
 .chart_card_title {
     margin-bottom: 10px;
-    font-size: 16px;
+    text-align: center;
+    font-size: 22px;
     font-weight: 600;
 }
 
@@ -39,6 +41,108 @@
     position: relative;
     width: 100%;
     height: 260px;
+}
+
+/* ===== LED STRIP ===== */
+
+.led_strip_section {
+    margin-top: 25px;
+    background-color: #e8e8f5;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.led_strip_title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.led_strip_list {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.led_strip_item {
+    height: 60px;
+
+    background-color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.led_strip_light {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ===== ACCELEROMETER ===== */
+
+.accelerometer_section {
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.accelerometer_title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.accelerometer_content {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 760px);
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.accelerometer_values {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 0;
+}
+
+.accelerometer_card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    min-height: 82px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.accelerometer_axis {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(47, 62, 70, 0.8);
+}
+
+.accelerometer_value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2f3e46;
+}
+
+.accelerometer_chart {
+    width: 100%;
+    height: 320px;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* Планшеты и телефоны */
@@ -65,5 +169,53 @@
 
     .chart_canvas {
         height: 230px;
+    }
+        .led_strip_section {
+        padding: 16px;
+    }
+
+    .led_strip_list {
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+        gap: 16px;
+    }
+
+    .led_strip_item {
+        min-height: 75px;
+    }
+
+    .led_strip_light {
+        width: 20px;
+        height: 20px;
+    }
+    .accelerometer_section {
+        padding: 16px;
+    }
+
+    .accelerometer_content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .accelerometer_values {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .accelerometer_card {
+        min-height: 70px;
+        padding: 10px;
+    }
+
+    .accelerometer_axis {
+        font-size: 13px;
+    }
+
+    .accelerometer_value {
+        font-size: 18px;
+    }
+
+    .accelerometer_chart {
+        height: 230px;
+        padding: 14px;
     }
 }
