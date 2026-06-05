@@ -1,0 +1,158 @@
+{
+    "LED1": 1,
+    "LED2": 1,
+    "LED3": 0,
+    "button1State": 0,
+    "button2State": 1,
+    "button3State": 1,
+    "temperature": 24.3,
+    "pressure": 962,
+    "ambient_light": 967,
+    "red_light": 858,
+    "green_light": 6,
+    "blue_light": 267,
+    "lightness": 69,
+    "temperature_history": [
+        {
+            "time": "10:00",
+            "value": 22.8
+        },
+        {
+            "time": "10:10",
+            "value": 23.1
+        },
+        {
+            "time": "10:20",
+            "value": 23.2
+        },
+        {
+            "time": "10:30",
+            "value": 24.9
+        },
+        {
+            "time": "10:40",
+            "value": 24
+        }
+    ],
+    "pressure_history": [
+        {
+            "time": "10:00",
+            "value": 962
+        },
+        {
+            "time": "10:10",
+            "value": 958
+        },
+        {
+            "time": "10:20",
+            "value": 963
+        },
+        {
+            "time": "10:30",
+            "value": 966
+        },
+        {
+            "time": "10:40",
+            "value": 965
+        }
+    ],
+    "ambient_light_history": [
+        {
+            "time": "10:00",
+            "value": 880
+        },
+        {
+            "time": "10:10",
+            "value": 790
+        },
+        {
+            "time": "10:20",
+            "value": 850
+        },
+        {
+            "time": "10:30",
+            "value": 750
+        },
+        {
+            "time": "10:40",
+            "value": 945
+        }
+    ],
+    "lightness_history": [
+        {
+            "time": "10:00",
+            "value": 46
+        },
+        {
+            "time": "10:10",
+            "value": 55
+        },
+        {
+            "time": "10:20",
+            "value": 88
+        },
+        {
+            "time": "10:30",
+            "value": 83
+        },
+        {
+            "time": "10:40",
+            "value": 68
+        }
+    ],
+    "acceleration_x": -1.82,
+    "acceleration_y": -0.59,
+    "acceleration_z": 1.69,
+    "leds": [
+        {
+            "red": 22,
+            "green": 144,
+            "blue": 33
+        },
+        {
+            "red": 25,
+            "green": 164,
+            "blue": 70
+        },
+        {
+            "red": 213,
+            "green": 95,
+            "blue": 74
+        },
+        {
+            "red": 77,
+            "green": 145,
+            "blue": 44
+        },
+        {
+            "red": 53,
+            "green": 55,
+            "blue": 28
+        },
+        {
+            "red": 32,
+            "green": 148,
+            "blue": 32
+        },
+        {
+            "red": 201,
+            "green": 34,
+            "blue": 226
+        },
+        {
+            "red": 125,
+            "green": 89,
+            "blue": 3
+        },
+        {
+            "red": 130,
+            "green": 182,
+            "blue": 23
+        },
+        {
+            "red": 36,
+            "green": 179,
+            "blue": 157
+        }
+    ]
+}
