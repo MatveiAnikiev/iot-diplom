@@ -70,18 +70,9 @@ fetch('data_Lab_macket_v1.json')
                     data: [data.red_light, data.green_light, data.blue_light],
                     borderWidth: 3,
                     borderRadius:10,
-                    backgroundColor: [
-                        'rgba(243, 63, 102, 0.6)',  
-                        'rgba(53, 187, 73, 0.6)', 
-                        'rgba(32, 151, 231, 0.6)' 
-                    ],
-                    borderColor: [
-                        'rgba(197, 64, 113, 0.5)',
-                        'rgba(62, 144, 74, 0.5)',
-                        'rgba(44, 111, 155, 0.5)' 
-                    ],
+                    backgroundColor: ['rgba(243, 63, 102, 0.6)',  'rgba(53, 187, 73, 0.6)', 'rgba(32, 151, 231, 0.6)' ],
+                    borderColor: ['rgba(197, 64, 113, 0.5)', 'rgba(62, 144, 74, 0.5)','rgba(44, 111, 155, 0.5)' ],
                     barPercentage: 1.1,
-
                 }]
             },
             options: {
@@ -179,12 +170,11 @@ fetch('data_Lab_macket_v1.json')
         const donut_chart = new Chart(document.querySelector('#doughnut_chart_system'), {
             type: 'doughnut',
             data: {
-                labels: ['ON', 'OFF'], // не нужно
                 datasets: [{
                     data: [activeCount, total - activeCount],
                     backgroundColor: [
-                        'rgba(125, 120, 212, 0.92)', // вкл
-                        'rgba(200, 200, 200, 0.3)' // выкл
+                        'rgba(125, 120, 212, 0.92)', // активные
+                        'rgba(200, 200, 200, 0.3)' // неактиные 
                     ],
                     borderWidth: 0
                 }]
