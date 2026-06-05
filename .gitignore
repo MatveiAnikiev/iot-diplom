@@ -1,4 +1,8 @@
 .DS_Store
 .idea
 dist
+<<<<<<< HEAD
 node_modulesgi
+=======
+node_modulesgs
+>>>>>>> 3cb5060 (update gitignore)
